@@ -17,7 +17,7 @@ public class Player {
 		this.tile = Tile.PLAYER;
 	}
 	
-	public void update(Map map) {
+	public void update(MapDraw map) {
 		if(Gdx.input.isKeyJustPressed(Keys.A)) {
 			this.x -= 1;
 		}
@@ -33,6 +33,10 @@ public class Player {
 
 		if(Gdx.input.isKeyJustPressed(Keys.E)) {
 			map.interact(this);
+		}
+		
+		if(Gdx.input.isKeyJustPressed(Keys.I)) {
+			System.out.println(map.inventory.toString());
 		}
 	}
 	

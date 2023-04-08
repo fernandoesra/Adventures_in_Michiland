@@ -4,15 +4,20 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class Map {
+public class MapDraw {
 	private int WIDTH;
 	private int HEIGHT;
 	private Tile tilemap[][];
-	public Map(int WIDTH, int HEIGHT, Texture spriteSheet) {
+	private MapExploration explomap;
+	public Inventory inventory;
+	
+	public MapDraw(int WIDTH, int HEIGHT, Texture spriteSheet) {
 		this.WIDTH = WIDTH;
 		this.HEIGHT = HEIGHT;
 				
 		tilemap = new Tile[WIDTH][HEIGHT];
+		explomap = new MapExploration(WIDTH,HEIGHT);
+		inventory = new Inventory();
 		
 		for (int i = 0; i < WIDTH; i++) {
 			for (int j = 0; j < HEIGHT; j++) {				
@@ -141,7 +146,40 @@ public class Map {
 
 		switch(tile) {
 			case CAVE:
-				System.out.println("Congratulations you have discovered a cave!");
+				if(explomap.getInterior(player.x, player.y) == null) {
+					explomap.createCave(player.x, player.y);
+					System.out.println(explomap.mapExploration[player.x][player.y].toString());
+					
+					double add = ((Cave) explomap.mapExploration[player.x][player.y]).getMoney();
+					inventory.addMoney(add);
+					
+				} else {
+					System.out.println(explomap.mapExploration[player.x][player.y].toString());
+				}
+				;
+				break;
+			case HOUSE_01:
+			case HOUSE_02:
+			case HOUSE_03:
+				if(explomap.getInterior(player.x, player.y) == null) {
+					explomap.createHouse(player.x, player.y);
+					System.out.println(explomap.mapExploration[player.x][player.y].toString());
+				} else {
+					System.out.println(explomap.mapExploration[player.x][player.y].toString());
+				}
+				break;
+			case TREE_01:
+			case TREE_02:
+			case TREE_03:
+				System.out.println("Just a tree");
+				break;
+			case MAN:
+				if(explomap.getInterior(player.x, player.y) == null) {
+					explomap.createMan(player.x, player.y);
+					System.out.println(explomap.mapExploration[player.x][player.y].toString());
+				} else {
+					System.out.println(explomap.mapExploration[player.x][player.y].toString());
+				}
 				break;
 			default:
 				break;

@@ -22,7 +22,7 @@ public class Main extends ApplicationAdapter {
 	
 	OrthographicCamera orthoCamera;
 	
-	Map tilemap;
+	MapDraw tilemap;
 	
 	Player player;
 	
@@ -34,7 +34,7 @@ public class Main extends ApplicationAdapter {
 		ServicioTextura.iniciarTexturas(spriteSheet);
 		ServicioTexto.inicializaFuente();
 		
-		tilemap = new Map(heigthTotal,widthTotal,spriteSheet);
+		tilemap = new MapDraw(heigthTotal,widthTotal,spriteSheet);
 		
 		player = new Player((heigthTotal/2),(widthTotal/2));
 
@@ -61,7 +61,7 @@ public class Main extends ApplicationAdapter {
 		player.draw(spriteBatch);
 
 		// Test to draw some text
-		ServicioTexto.getBitmapFont().draw(spriteBatch, "Hello", player.x*16,player.y*16, 0, 0, false);
+		// ServicioTexto.getBitmapFont().draw(spriteBatch, "Hello", player.x*16,player.y*16, 0, 0, false);
 		
 		spriteBatch.end();
 	}
