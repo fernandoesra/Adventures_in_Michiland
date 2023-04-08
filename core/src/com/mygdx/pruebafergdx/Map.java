@@ -33,7 +33,14 @@ public class Map {
 			int fillHeight = (int) (Math.random() * HEIGHT + 0);
 			
 			if (tilemap[fillWidth][fillHeight] == Tile.EMPTY) {
-				tilemap[fillWidth][fillHeight] = Tile.TREE_01;
+				int random = (int) (Math.random() * 101 + 1);
+				if (random >= 1 && random <= 50) {
+					tilemap[fillWidth][fillHeight] = Tile.TREE_01;
+				} else if (random >= 51 && random <= 90) {
+					tilemap[fillWidth][fillHeight] = Tile.TREE_02;
+				} else {
+					tilemap[fillWidth][fillHeight] = Tile.TREE_03;
+				}
 			} else {
 				i--;
 			}
@@ -50,7 +57,14 @@ public class Map {
 			int fillHeight = (int) (Math.random() * HEIGHT + 0);
 			
 			if (tilemap[fillWidth][fillHeight] == Tile.EMPTY) {
-				tilemap[fillWidth][fillHeight] = Tile.HOUSE_01;
+				int random = (int) (Math.random() * 101 + 1);
+				if (random >= 1 && random <= 50) {
+					tilemap[fillWidth][fillHeight] = Tile.HOUSE_01;
+				} else if (random >= 51 && random <= 90) {
+					tilemap[fillWidth][fillHeight] = Tile.HOUSE_02;
+				} else {
+					tilemap[fillWidth][fillHeight] = Tile.HOUSE_03;
+				}
 			} else {
 				i--;
 			}
