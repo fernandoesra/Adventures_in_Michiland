@@ -137,7 +137,16 @@ public class Map {
 			
 		}
 	}
-	
-	
-	
+
+	public void interact(Player player) {
+		Tile tile = tilemap[player.x][player.y];
+
+		switch(tile) {
+			case CAVE:
+				System.out.println("Congratulations you have discovered a cave!");
+				break;
+			default:
+				break;
+		}
+	}
 }

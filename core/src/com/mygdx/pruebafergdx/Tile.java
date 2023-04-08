@@ -15,6 +15,6 @@ public enum Tile {
 	PLAYER();
 	
 	private Tile() {
-	}
 
+	}
 }

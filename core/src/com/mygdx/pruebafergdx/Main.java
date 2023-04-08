@@ -48,9 +48,10 @@ public class Main extends ApplicationAdapter {
 	@Override
 	public void render () {
 		// Update
-		player.update();
+		player.update(tilemap);
 		orthoCamera.position.set(player.x*16, player.y*16, 0);
 		orthoCamera.update();
+		
 
 		// Draw
 		ScreenUtils.clear(39/256f, 40/256f, 35/256f, 1);

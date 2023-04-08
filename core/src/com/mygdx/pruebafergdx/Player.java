@@ -11,36 +11,29 @@ public class Player {
 	public int y;
 	public Tile tile;
 	
-	private static final float SPEED_MOVING = 110;
-	
-	
 	public Player(int x, int y) {
 		this.x = x;
 		this.y = y;
 		this.tile = Tile.PLAYER;
 	}
 	
-	public void update() {
+	public void update(Map map) {
 		if(Gdx.input.isKeyJustPressed(Keys.A)) {
-            this.x -= 1;
-        }
-        if(Gdx.input.isKeyJustPressed(Keys.S)) {
-            this.y -= 1;
-        }
-        if(Gdx.input.isKeyJustPressed(Keys.D)) {
-            this.x += 1;
-        }
-        if(Gdx.input.isKeyJustPressed(Keys.W)) {
-            this.y += 1;
-        }
-        
-        /*
-        if(Gdx.input.isKeyJustPressed(Keys.E)) {
-            Persona p1 = Persona();
-            p1.toString();
-            Tile[jugadro.x][jugadro.y] == Tile.EXPLORADO;
-        }
-        */
+			this.x -= 1;
+		}
+		if(Gdx.input.isKeyJustPressed(Keys.S)) {
+			this.y -= 1;
+		}
+		if(Gdx.input.isKeyJustPressed(Keys.D)) {
+			this.x += 1;
+		}
+		if(Gdx.input.isKeyJustPressed(Keys.W)) {
+			this.y += 1;
+		}
+
+		if(Gdx.input.isKeyJustPressed(Keys.E)) {
+			map.interact(this);
+		}
 	}
 	
 	public void draw(SpriteBatch batch) {
