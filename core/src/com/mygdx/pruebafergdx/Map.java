@@ -60,8 +60,8 @@ public class Map {
 		}
 		
 		// Generate HOUSE
-		minPercent = 1;
-		maxPercent = 10;
+		minPercent = WIDTH/10;
+		maxPercent = minPercent*2;
 		FILL = (Math.random() * maxPercent + minPercent);
 		
 		for (int i = 0; i < FILL; i++) {
@@ -86,8 +86,8 @@ public class Map {
 		
 		// Generate MAN
 		
-		minPercent = 0;
-		maxPercent = 5;
+		minPercent = WIDTH/20;
+		maxPercent = minPercent*2;
 		FILL = (Math.random() * maxPercent + minPercent);
 		
 		for (int i = 0; i < FILL; i++) {
@@ -105,8 +105,8 @@ public class Map {
 		
 		// Generate CAVE
 		
-		minPercent = 1;
-		maxPercent = 5;
+		minPercent = WIDTH/100;
+		maxPercent = minPercent*10;
 		FILL = (Math.random() * maxPercent + minPercent);
 		
 		for (int i = 0; i < FILL; i++) {
@@ -137,5 +137,7 @@ public class Map {
 			
 		}
 	}
+	
+	
 	
 }

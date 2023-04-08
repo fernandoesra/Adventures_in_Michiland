@@ -33,6 +33,14 @@ public class Player {
         if(Gdx.input.isKeyJustPressed(Keys.W)) {
             this.y += 1;
         }
+        
+        /*
+        if(Gdx.input.isKeyJustPressed(Keys.E)) {
+            Persona p1 = Persona();
+            p1.toString();
+            Tile[jugadro.x][jugadro.y] == Tile.EXPLORADO;
+        }
+        */
 	}
 	
 	public void draw(SpriteBatch batch) {

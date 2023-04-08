@@ -18,6 +18,8 @@ public class Main extends ApplicationAdapter {
 	SpriteBatch spriteBatch;
 	Texture spriteSheet;
 	Sprite spriteTest;
+	int widthTotal = 300;
+	int heigthTotal = 300;
 	
 	OrthographicCamera orthoCamera;
 	
@@ -32,20 +34,23 @@ public class Main extends ApplicationAdapter {
 		// spriteTest = new Sprite(spriteSheet, 2, 2, 16, 16);
 		
 		orthoCamera = new OrthographicCamera(480,480);
-		orthoCamera.translate(480/2,480/2);
+		// orthoCamera.translate(((heigthTotal/2)*16),((widthTotal/2)*16));
+		orthoCamera.position.set(((heigthTotal/2)*16), ((widthTotal/2)*16), 0);
 		orthoCamera.update();
 		
 		ServicioTextura.iniciarTexturas(spriteSheet);
 		
-		tilemap = new Map(40,40,spriteSheet);
+		tilemap = new Map(heigthTotal,widthTotal,spriteSheet);
 		
-		player = new Player(0,0);
+		player = new Player((heigthTotal/2),(widthTotal/2));
 	}
 
 	@Override
 	public void render () {
 		// Update
 		player.update();
+		orthoCamera.position.set(player.x*16, player.y*16, 0);
+		orthoCamera.update();
 
 		// Draw
 		ScreenUtils.clear(39/256f, 40/256f, 35/256f, 1);
