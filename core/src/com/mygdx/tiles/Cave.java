@@ -2,14 +2,16 @@ package com.mygdx.tiles;
 
 import com.mygdx.pruebafergdx.IPlayerAction;
 import com.mygdx.pruebafergdx.Player;
+import com.mygdx.utils.AleatoricName;
 
 public class Cave implements IPlayerAction{
 	String name;
 	double money;
 	
 	public Cave() {
+		AleatoricName newName = new AleatoricName();
 		money = (Math.random() * 101 + 1);
-		name = "Cave of ";
+		name = "Cave of "+newName.toString();
 	}
 	
 	public double getMoney() {

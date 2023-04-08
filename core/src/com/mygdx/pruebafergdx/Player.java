@@ -22,16 +22,32 @@ public class Player {
 	
 	public void update(MapDraw map) {
 		if(Gdx.input.isKeyJustPressed(Keys.A)) {
-			this.x -= 1;
+			if (map.practicable(x-1, y) == true) {
+				this.x -= 1;
+			} else {
+				
+			}
 		}
 		if(Gdx.input.isKeyJustPressed(Keys.S)) {
-			this.y -= 1;
+			if (map.practicable(x, y-1) == true) {
+				this.y -= 1;
+			} else {
+				
+			}
 		}
 		if(Gdx.input.isKeyJustPressed(Keys.D)) {
-			this.x += 1;
+			if (map.practicable(x+1, y) == true) {
+				this.x += 1;
+			} else {
+				
+			}
 		}
 		if(Gdx.input.isKeyJustPressed(Keys.W)) {
-			this.y += 1;
+			if (map.practicable(x, y+1) == true) {
+				this.y += 1;
+			} else {
+				
+			}
 		}
 
 		if(Gdx.input.isKeyJustPressed(Keys.E)) {

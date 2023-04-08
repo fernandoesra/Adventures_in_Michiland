@@ -110,7 +110,7 @@ public class MapDraw {
 		
 		minPercent = WIDTH/100;
 		maxPercent = minPercent*10;
-		FILL = (Math.random() * 50 + 100);
+		FILL = (Math.random() * maxPercent + minPercent);
 		
 		for (int i = 0; i < FILL; i++) {
 			int fillWidth = (int) (Math.random() * WIDTH + 0);
@@ -124,6 +124,10 @@ public class MapDraw {
 			}
 			
 		}
+		
+		// Generate X behind the player
+		
+		tilemap[(WIDTH/2)-1][(HEIGHT/2)] = Tile.CAVE;
 		
 
 	}
@@ -184,4 +188,25 @@ public class MapDraw {
 				break;
 		}
 	}
+	
+	public boolean practicable(int x, int y) {
+		boolean practible = true;
+		
+		switch (tilemap[x][y]) {
+		case TREE_01:
+			practible = false;
+			break;
+		case TREE_02:
+			practible = false;
+			break;
+		case TREE_03:
+			practible = false;
+			break;
+		default:
+			break;
+		}
+		
+		return practible;
+	}
+	
 }
