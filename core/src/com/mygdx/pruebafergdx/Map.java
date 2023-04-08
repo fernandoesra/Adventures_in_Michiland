@@ -19,9 +19,10 @@ public class Map {
 			for (int j = 0; j < HEIGHT; j++) {				
 				
 				int random = (int) (Math.random() * 101 + 1);
-				if (random >= 1 && random <= 40) {
+				
+				if (random >= 1 && random <= 70) {
 					tilemap[i][j] = Tile.EMPTY_01;
-				} else if (random >= 41 && random <= 70) {
+				} else if (random >= 71 && random <= 90) {
 					tilemap[i][j] = Tile.EMPTY_02;
 				} else {
 					tilemap[i][j] = Tile.EMPTY_03;
