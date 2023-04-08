@@ -2,6 +2,7 @@ package com.mygdx.pruebafergdx;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Player {
@@ -35,8 +36,9 @@ public class Player {
 	}
 	
 	public void draw(SpriteBatch batch) {
-		TileContainer tileCon = ServicioTextura.getTileContainer(tile);
-		tileCon.draw(batch, x*16, y*16);
+		Sprite sprite = ServicioTextura.getSprite(tile);
+		sprite.setPosition(x*16,y*16);
+		sprite.draw(batch);
 	}
 
 }

@@ -3,6 +3,7 @@ package com.mygdx.pruebafergdx;
 import java.util.HashMap;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Map {
@@ -129,9 +130,9 @@ public class Map {
 			for (int j = 0; j < HEIGHT; j++) {
 				Tile tile = tilemap[i][j];
 				
-				TileContainer tilecont = ServicioTextura.getTileContainer(tile);
-				
-				tilecont.draw(batch, i*16,j*16);
+				Sprite sprite = ServicioTextura.getSprite(tile);
+				sprite.setPosition(i*16,j*16);
+				sprite.draw(batch);
 			}
 			
 		}
