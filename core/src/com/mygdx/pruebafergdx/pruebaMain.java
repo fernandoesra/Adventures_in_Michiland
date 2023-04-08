@@ -44,10 +44,13 @@ public class pruebaMain extends ApplicationAdapter {
 
 	@Override
 	public void render () {
+		// Update
+		player.update();
+
+		// Draw
 		ScreenUtils.clear(39/256f, 40/256f, 35/256f, 1);
 		
 		spriteBatch.setProjectionMatrix(orthoCamera.combined);
-		
 		spriteBatch.begin();
 		tilemap.draw(spriteBatch);
 		// spriteTest.draw(spriteBatch);

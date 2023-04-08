@@ -1,5 +1,7 @@
 package com.mygdx.pruebafergdx;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Player {
@@ -18,12 +20,23 @@ public class Player {
 	}
 	
 	public void update() {
-		
+		if(Gdx.input.isKeyJustPressed(Keys.A)) {
+            this.x -= 1;
+        }
+        if(Gdx.input.isKeyJustPressed(Keys.S)) {
+            this.y -= 1;
+        }
+        if(Gdx.input.isKeyJustPressed(Keys.D)) {
+            this.x += 1;
+        }
+        if(Gdx.input.isKeyJustPressed(Keys.W)) {
+            this.y += 1;
+        }
 	}
 	
 	public void draw(SpriteBatch batch) {
 		TileContainer tileCon = ServicioTextura.getTileContainer(tile);
-		tileCon.draw(batch, x, y);
+		tileCon.draw(batch, x*16, y*16);
 	}
 
 }
