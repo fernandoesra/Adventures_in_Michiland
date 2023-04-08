@@ -1,5 +1,9 @@
 package com.mygdx.pruebafergdx;
 
+import com.mygdx.tiles.Cave;
+import com.mygdx.tiles.House;
+import com.mygdx.tiles.Man;
+
 public class MapExploration {
 	// Atributes
 	Object mapExploration[][];
