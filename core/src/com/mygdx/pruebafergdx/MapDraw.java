@@ -3,13 +3,14 @@ package com.mygdx.pruebafergdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.mygdx.servicios.ServicioTextura;
+import com.mygdx.tiles.Cave;
 
 public class MapDraw {
 	private int WIDTH;
 	private int HEIGHT;
 	private Tile tilemap[][];
 	private MapExploration explomap;
-	public Inventory inventory;
 	
 	public MapDraw(int WIDTH, int HEIGHT, Texture spriteSheet) {
 		this.WIDTH = WIDTH;
@@ -17,7 +18,6 @@ public class MapDraw {
 				
 		tilemap = new Tile[WIDTH][HEIGHT];
 		explomap = new MapExploration(WIDTH,HEIGHT);
-		inventory = new Inventory();
 		
 		for (int i = 0; i < WIDTH; i++) {
 			for (int j = 0; j < HEIGHT; j++) {				
@@ -151,12 +151,11 @@ public class MapDraw {
 					System.out.println(explomap.mapExploration[player.x][player.y].toString());
 					
 					double add = ((Cave) explomap.mapExploration[player.x][player.y]).getMoney();
-					inventory.addMoney(add);
+					player.inventory.addMoney(add);
 					
 				} else {
 					System.out.println(explomap.mapExploration[player.x][player.y].toString());
 				}
-				;
 				break;
 			case HOUSE_01:
 			case HOUSE_02:
