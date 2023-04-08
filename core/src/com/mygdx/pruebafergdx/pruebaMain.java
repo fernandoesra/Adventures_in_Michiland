@@ -8,6 +8,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.mygdx.pruebafergdx.ServicioTextura;
 
+/**
+ * 
+ * @author Fernando Esra and Michi
+ *
+ */
 
 public class pruebaMain extends ApplicationAdapter {
 	SpriteBatch spriteBatch;
