@@ -14,7 +14,7 @@ import com.mygdx.pruebafergdx.ServicioTextura;
  *
  */
 
-public class pruebaMain extends ApplicationAdapter {
+public class Main extends ApplicationAdapter {
 	SpriteBatch spriteBatch;
 	Texture spriteSheet;
 	Sprite spriteTest;
@@ -28,7 +28,7 @@ public class pruebaMain extends ApplicationAdapter {
 	@Override
 	public void create () {
 		spriteBatch = new SpriteBatch();
-		spriteSheet = new Texture("main_tiles.png");
+		spriteSheet = new Texture("tile_michiland_02.png");
 		// spriteTest = new Sprite(spriteSheet, 2, 2, 16, 16);
 		
 		orthoCamera = new OrthographicCamera(480,480);

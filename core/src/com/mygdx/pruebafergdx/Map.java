@@ -33,7 +33,7 @@ public class Map {
 			int fillHeight = (int) (Math.random() * HEIGHT + 0);
 			
 			if (tilemap[fillWidth][fillHeight] == Tile.EMPTY) {
-				tilemap[fillWidth][fillHeight] = Tile.TREE;
+				tilemap[fillWidth][fillHeight] = Tile.TREE_01;
 			} else {
 				i--;
 			}
@@ -50,7 +50,7 @@ public class Map {
 			int fillHeight = (int) (Math.random() * HEIGHT + 0);
 			
 			if (tilemap[fillWidth][fillHeight] == Tile.EMPTY) {
-				tilemap[fillWidth][fillHeight] = Tile.HOUSE;
+				tilemap[fillWidth][fillHeight] = Tile.HOUSE_01;
 			} else {
 				i--;
 			}

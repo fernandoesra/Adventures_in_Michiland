@@ -10,6 +10,6 @@ public class DesktopLauncher {
 		config.setForegroundFPS(60);
 		config.setTitle("Adventures in Michiland");
 		config.setWindowedMode(960, 960);
-		new Lwjgl3Application(new pruebaMain(), config);
+		new Lwjgl3Application(new Main(), config);
 	}
 }
