@@ -1,4 +1,4 @@
-package com.mygdx.pruebafergdx;
+package com.mygdx.servicios;
 
 import java.util.EnumSet;
 import java.util.HashMap;
@@ -7,6 +7,7 @@ import java.util.Set;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.mygdx.pruebafergdx.Tile;
 
 public class ServicioTextura {
 	private static HashMap<Tile, Sprite> TILE_SPRITE_MAP;

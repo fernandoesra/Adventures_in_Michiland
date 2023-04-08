@@ -1,6 +1,9 @@
-package com.mygdx.pruebafergdx;
+package com.mygdx.tiles;
 
-public class Cave {
+import com.mygdx.pruebafergdx.IPlayerAction;
+import com.mygdx.pruebafergdx.Player;
+
+public class Cave implements IPlayerAction{
 	String name;
 	double money;
 	
@@ -15,6 +18,11 @@ public class Cave {
 	
 	public String toString() {
 		return "Name: "+name+" Money: "+money;
+	}
+
+	@Override
+	public void executeAction(Player player) {
+		
 	}
 
 }
