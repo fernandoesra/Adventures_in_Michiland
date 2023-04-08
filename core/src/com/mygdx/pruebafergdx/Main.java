@@ -28,7 +28,7 @@ public class Main extends ApplicationAdapter {
 	@Override
 	public void create () {
 		spriteBatch = new SpriteBatch();
-		spriteSheet = new Texture("tile_michiland_02.png");
+		spriteSheet = new Texture("michi_tile_03.png");
 		// spriteTest = new Sprite(spriteSheet, 2, 2, 16, 16);
 		
 		orthoCamera = new OrthographicCamera(480,480);

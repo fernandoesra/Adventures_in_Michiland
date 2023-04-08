@@ -17,7 +17,16 @@ public class Map {
 		
 		for (int i = 0; i < WIDTH; i++) {
 			for (int j = 0; j < HEIGHT; j++) {				
-				tilemap[i][j] = Tile.EMPTY;
+				
+				int random = (int) (Math.random() * 101 + 1);
+				if (random >= 1 && random <= 40) {
+					tilemap[i][j] = Tile.EMPTY_01;
+				} else if (random >= 41 && random <= 70) {
+					tilemap[i][j] = Tile.EMPTY_02;
+				} else {
+					tilemap[i][j] = Tile.EMPTY_03;
+				}
+				
 			}
 			
 		}
@@ -32,7 +41,8 @@ public class Map {
 			int fillWidth = (int) (Math.random() * WIDTH + 0);
 			int fillHeight = (int) (Math.random() * HEIGHT + 0);
 			
-			if (tilemap[fillWidth][fillHeight] == Tile.EMPTY) {
+			if (tilemap[fillWidth][fillHeight] == Tile.EMPTY_01 || tilemap[fillWidth][fillHeight] == Tile.EMPTY_02
+					|| tilemap[fillWidth][fillHeight] == Tile.EMPTY_03) {
 				int random = (int) (Math.random() * 101 + 1);
 				if (random >= 1 && random <= 50) {
 					tilemap[fillWidth][fillHeight] = Tile.TREE_01;
@@ -56,11 +66,12 @@ public class Map {
 			int fillWidth = (int) (Math.random() * WIDTH + 0);
 			int fillHeight = (int) (Math.random() * HEIGHT + 0);
 			
-			if (tilemap[fillWidth][fillHeight] == Tile.EMPTY) {
+			if (tilemap[fillWidth][fillHeight] == Tile.EMPTY_01 || tilemap[fillWidth][fillHeight] == Tile.EMPTY_02
+					|| tilemap[fillWidth][fillHeight] == Tile.EMPTY_03) {
 				int random = (int) (Math.random() * 101 + 1);
-				if (random >= 1 && random <= 50) {
+				if (random >= 1 && random <= 40) {
 					tilemap[fillWidth][fillHeight] = Tile.HOUSE_01;
-				} else if (random >= 51 && random <= 90) {
+				} else if (random >= 41 && random <= 70) {
 					tilemap[fillWidth][fillHeight] = Tile.HOUSE_02;
 				} else {
 					tilemap[fillWidth][fillHeight] = Tile.HOUSE_03;
@@ -81,7 +92,8 @@ public class Map {
 			int fillWidth = (int) (Math.random() * WIDTH + 0);
 			int fillHeight = (int) (Math.random() * HEIGHT + 0);
 			
-			if (tilemap[fillWidth][fillHeight] == Tile.EMPTY) {
+			if (tilemap[fillWidth][fillHeight] == Tile.EMPTY_01 || tilemap[fillWidth][fillHeight] == Tile.EMPTY_02
+					|| tilemap[fillWidth][fillHeight] == Tile.EMPTY_03) {
 				tilemap[fillWidth][fillHeight] = Tile.MAN;
 			} else {
 				i--;
@@ -91,15 +103,16 @@ public class Map {
 		
 		// Generate CAVE
 		
-		minPercent = 0;
-		maxPercent = 2;
+		minPercent = 1;
+		maxPercent = 5;
 		FILL = (Math.random() * maxPercent + minPercent);
 		
 		for (int i = 0; i < FILL; i++) {
 			int fillWidth = (int) (Math.random() * WIDTH + 0);
 			int fillHeight = (int) (Math.random() * HEIGHT + 0);
 			
-			if (tilemap[fillWidth][fillHeight] == Tile.EMPTY) {
+			if (tilemap[fillWidth][fillHeight] == Tile.EMPTY_01 || tilemap[fillWidth][fillHeight] == Tile.EMPTY_02
+					|| tilemap[fillWidth][fillHeight] == Tile.EMPTY_03) {
 				tilemap[fillWidth][fillHeight] = Tile.CAVE;
 			} else {
 				i--;

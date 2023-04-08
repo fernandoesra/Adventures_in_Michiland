@@ -1,7 +1,9 @@
 package com.mygdx.pruebafergdx;
 
 public enum Tile {
-	EMPTY(),
+	EMPTY_01(),
+	EMPTY_02(),
+	EMPTY_03(),
 	TREE_01(),
 	TREE_02(),
 	TREE_03(),
