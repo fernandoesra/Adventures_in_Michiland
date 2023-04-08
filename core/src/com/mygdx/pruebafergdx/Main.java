@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
-import com.mygdx.pruebafergdx.ServicioTextura;
 
 /**
  * 
@@ -31,18 +30,17 @@ public class Main extends ApplicationAdapter {
 	public void create () {
 		spriteBatch = new SpriteBatch();
 		spriteSheet = new Texture("michi_tile_03.png");
-		// spriteTest = new Sprite(spriteSheet, 2, 2, 16, 16);
-		
-		orthoCamera = new OrthographicCamera(480,480);
-		// orthoCamera.translate(((heigthTotal/2)*16),((widthTotal/2)*16));
-		orthoCamera.position.set(((heigthTotal/2)*16), ((widthTotal/2)*16), 0);
-		orthoCamera.update();
 		
 		ServicioTextura.iniciarTexturas(spriteSheet);
+		ServicioTexto.inicializaFuente();
 		
 		tilemap = new Map(heigthTotal,widthTotal,spriteSheet);
 		
 		player = new Player((heigthTotal/2),(widthTotal/2));
+
+		orthoCamera = new OrthographicCamera(480,480);
+		orthoCamera.position.set(player.x*16, player.y*16, 0);
+		orthoCamera.update();
 	}
 
 	@Override
@@ -58,10 +56,12 @@ public class Main extends ApplicationAdapter {
 		
 		spriteBatch.setProjectionMatrix(orthoCamera.combined);
 		spriteBatch.begin();
+
 		tilemap.draw(spriteBatch);
-		// spriteTest.draw(spriteBatch);
-		
 		player.draw(spriteBatch);
+
+		// Test to draw some text
+		ServicioTexto.getBitmapFont().draw(spriteBatch, "Hello", player.x*16,player.y*16, 0, 0, false);
 		
 		spriteBatch.end();
 	}
