@@ -43,6 +43,10 @@ public class Player {
 		}
 	}
 	
+	public void addMoney(double add) {
+		inventory.addMoney(add);
+	}
+	
 	public void draw(SpriteBatch batch) {
 		Sprite sprite = ServicioTextura.getSprite(tile);
 		sprite.setPosition(x*16,y*16);

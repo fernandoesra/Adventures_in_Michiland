@@ -17,7 +17,7 @@ public class Cave implements IPlayerAction{
 	}
 	
 	public String toString() {
-		return "Name: "+name+" Money: "+money;
+		return "Name: "+name+" Money: "+(Math.floor(money*100.0d) / 100.0d)+" Michidolares";
 	}
 
 	@Override

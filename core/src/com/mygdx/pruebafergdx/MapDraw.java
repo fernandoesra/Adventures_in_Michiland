@@ -110,7 +110,7 @@ public class MapDraw {
 		
 		minPercent = WIDTH/100;
 		maxPercent = minPercent*10;
-		FILL = (Math.random() * maxPercent + minPercent);
+		FILL = (Math.random() * 50 + 100);
 		
 		for (int i = 0; i < FILL; i++) {
 			int fillWidth = (int) (Math.random() * WIDTH + 0);
