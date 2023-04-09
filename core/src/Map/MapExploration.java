@@ -1,4 +1,4 @@
-package com.mygdx.pruebafergdx;
+package Map;
 
 import com.mygdx.tiles.Cave;
 import com.mygdx.tiles.House;

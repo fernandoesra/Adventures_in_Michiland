@@ -9,6 +9,8 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import com.mygdx.servicios.ServicioTexto;
 import com.mygdx.servicios.ServicioTextura;
 
+import Map.MapDraw;
+
 /**
  * 
  * @author Fernando Esra and Michi
@@ -31,7 +33,7 @@ public class Main extends ApplicationAdapter {
 	@Override
 	public void create () {
 		spriteBatch = new SpriteBatch();
-		spriteSheet = new Texture("michi_tile_03.png");
+		spriteSheet = new Texture("tile_michi_outside.png");
 		
 		ServicioTextura.iniciarTexturas(spriteSheet);
 		ServicioTexto.inicializaFuente();

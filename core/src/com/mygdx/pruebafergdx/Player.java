@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.servicios.ServicioTextura;
 
+import Map.MapDraw;
+
 public class Player {
 	
 	public int x;
