@@ -218,8 +218,10 @@ public class MapDraw {
 			case CAVE_03:
 			case CAVE_04:
 				if(explomap.getInterior(player.x, player.y) == null) {
+					
 					explomap.createCave(player.x, player.y);
-					System.out.println(explomap.mapExploration[player.x][player.y].toString());
+					String text = ((Cave) explomap.mapExploration[player.x][player.y]).discoverCave();
+					System.out.println(text);
 					
 					double add = ((Cave) explomap.mapExploration[player.x][player.y]).getMoney();
 					player.inventory.addMoney(add);
