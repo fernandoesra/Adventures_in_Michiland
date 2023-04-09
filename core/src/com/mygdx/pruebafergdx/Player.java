@@ -19,7 +19,7 @@ public class Player {
 		this.x = x;
 		this.y = y;
 		this.tile = Tile.PLAYER;
-		this.inventory = new Inventory();
+		this.inventory = new Inventory(x,y);
 	}
 	
 	public void update(MapDraw map) {
@@ -58,6 +58,10 @@ public class Player {
 		
 		if(Gdx.input.isKeyJustPressed(Keys.I)) {
 			System.out.println(inventory.toString());
+		}
+		
+		if(Gdx.input.isKeyJustPressed(Keys.M)) {
+			inventory.seeMap();
 		}
 	}
 	

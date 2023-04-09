@@ -4,13 +4,19 @@ package com.mygdx.pruebafergdx;
 
 public class Inventory {
 	double money;
+	Minimap minimap;
 	
-	public Inventory() {
+	public Inventory(int x, int y) {
 		money = 0;
+		this.minimap = new Minimap();
 	}
 	
 	public void addMoney(double money) {
 		this.money += money;
+	}
+	
+	public void seeMap() {
+		minimap.seeMinimap(null);
 	}
 	
 	public String toString() {
