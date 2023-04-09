@@ -13,7 +13,8 @@ import Map.MapDraw;
 
 /**
  * 
- * @author Fernando Esra and Michi
+ * @author 	Code: 	Fernando Esra and Michael Valwin
+ * 			Tiles:	miriamramosart on Instagram
  *
  */
 
