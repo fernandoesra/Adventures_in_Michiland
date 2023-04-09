@@ -39,17 +39,6 @@ public class AleatoricName {
 		return vowel;
 	}
 	
-	public char generateConsonantMinus() {
-		int random = 0;
-		
-		do {
-			random = (int) (Math.random() * 123 + 97);
-		} while (random == 97 || random == 101 || random == 105 || random == 111 || random == 117);
-		
-		
-		return (char)random;
-	}
-	
 	public char generateVowelMayus() {
 		int random = (int) (Math.random() * 6 + 1);
 		char vowel = 'A';
@@ -74,14 +63,26 @@ public class AleatoricName {
 		}
 		return vowel;
 	}
+
+	public char generateConsonantMinus() {
+		int random = 0;
+		int min = 97;
+		int max = 122;
+		do {
+			random = (int) ((Math.random() * (max - min)) + min);
+		} while (random == 97 || random == 101 || random == 105 || random == 111 || random == 117);
+		
+		
+		return (char)random;
+	}
 	
 	public char generateConsonantMayus() {
 		int random = 0;
-		
+		int min = 65;
+		int max = 90;
 		do {
-			random = (int) (Math.random() * 91 + 65);
+			random = (int) ((Math.random() * (max - min)) + min);
 		} while (random == 65 || random == 69 || random == 73 || random == 79 || random == 85);
-		
 		
 		return (char)random;
 	}
