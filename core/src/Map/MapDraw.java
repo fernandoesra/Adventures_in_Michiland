@@ -3,7 +3,6 @@ package Map;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.mygdx.pruebafergdx.Minimap;
 import com.mygdx.pruebafergdx.Player;
 import com.mygdx.pruebafergdx.Tile;
 import com.mygdx.servicios.ServicioTextura;
@@ -12,7 +11,7 @@ import com.mygdx.tiles.Cave;
 public class MapDraw {
 	private int WIDTH;
 	private int HEIGHT;
-	private Tile tilemap[][];
+	public Tile tilemap[][];
 	private MapExploration explomap;
 	
 	public MapDraw(int WIDTH, int HEIGHT, Texture spriteSheet) {

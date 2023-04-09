@@ -1,5 +1,7 @@
 package com.mygdx.pruebafergdx;
 
+import Map.MapDraw;
+
 // (Math.floor(money*100.0d) / 100.0d)
 
 public class Inventory {
@@ -15,8 +17,8 @@ public class Inventory {
 		this.money += money;
 	}
 	
-	public void seeMap() {
-		minimap.seeMinimap(null);
+	public void seeMap(MapDraw map, int x, int y) {
+		Minimap.seeMinimap(map,x,y);
 	}
 	
 	public String toString() {

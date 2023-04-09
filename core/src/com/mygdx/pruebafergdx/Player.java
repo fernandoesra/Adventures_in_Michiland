@@ -61,7 +61,7 @@ public class Player {
 		}
 		
 		if(Gdx.input.isKeyJustPressed(Keys.M)) {
-			inventory.seeMap();
+			inventory.seeMap(map,x,y);
 		}
 	}
 	
