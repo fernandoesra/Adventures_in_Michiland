@@ -5,13 +5,65 @@ public class AleatoricName {
 	String name;
 	
 	public AleatoricName() {
-		this.name = 
-				""+
-		this.generateConsonantMayus()+
-		this.generateVowelMinus()+
-		this.generateConsonantMinus()
-		
+		this.name = this.generateAleatoricName();	
 		;
+	}
+	
+	public String generateAleatoricName() {
+		String newName = "";
+		
+		int min = 3;
+		int max = 12;
+		int random = (int) ((Math.random() * (max - min)) + min);
+		int vowels = 0;
+		
+		char nameChars[] = new char[random];
+		for (int i = 0; i < nameChars.length; i++) {
+			min = 0;
+			max = 100;
+			random = (int) ((Math.random() * (max - min)) + min);
+			
+			if (random >= 0 && random <= 85 && i == 0) {
+				nameChars[i] = this.generateConsonantMayus();
+			} else if (i == 0) {
+				nameChars[i] = this.generateVowelMayus();
+				vowels++;
+			}
+			
+			if (i > 0) {
+				
+				if (vowels >= 2) {
+					
+					random = (int) ((Math.random() * (max - min)) + min);
+					if (random >= 0 && random <= 85) {
+						nameChars[i] = this.generateConsonantMinus();
+						vowels--;
+					} else {
+						nameChars[i] = this.generateVowelMinus();
+						vowels++;
+					}
+					
+				} else {
+					
+					random = (int) ((Math.random() * (max - min)) + min);
+					if (random >= 0 && random <= 90) {
+						nameChars[i] = this.generateVowelMinus();
+						vowels++;
+					} else {
+						nameChars[i] = this.generateConsonantMinus();
+						vowels--;
+					}
+				}
+				
+			}
+
+		}
+		
+		for (int i = 0; i < nameChars.length; i++) {
+			newName += nameChars[i];
+		}
+		
+		return newName;
 	}
 	
 	public char generateVowelMinus() {
@@ -36,6 +88,67 @@ public class AleatoricName {
 		default:
 			break;
 		}
+		
+		if (vowel == 'a') {
+			random = (int) ((Math.random() * (100 - 0)) + 0);
+			
+			if (random >= 0 && random <= 5) {
+				vowel = 'ä';
+			}
+			
+			if (random >= 10 && random <= 15) {
+				vowel = 'á';
+			}
+		}
+		
+		if (vowel == 'e') {
+			random = (int) ((Math.random() * (100 - 0)) + 0);
+			
+			if (random >= 0 && random <= 5) {
+				vowel = 'ë';
+			}
+			
+			if (random >= 10 && random <= 15) {
+				vowel = 'é';
+			}
+		}
+		
+		if (vowel == 'i') {
+			random = (int) ((Math.random() * (100 - 0)) + 0);
+			
+			if (random >= 0 && random <= 5) {
+				vowel = 'ï';
+			}
+			
+			if (random >= 10 && random <= 15) {
+				vowel = 'í';
+			}
+		}
+		
+		if (vowel == 'o') {
+			random = (int) ((Math.random() * (100 - 0)) + 0);
+			
+			if (random >= 0 && random <= 5) {
+				vowel = 'ö';
+			}
+			
+			if (random >= 10 && random <= 15) {
+				vowel = 'ó';
+			}
+		}
+		
+		if (vowel == 'u') {
+			random = (int) ((Math.random() * (100 - 0)) + 0);
+			
+			if (random >= 0 && random <= 5) {
+				vowel = 'ü';
+			}
+			
+			if (random >= 10 && random <= 15) {
+				vowel = 'ú';
+			}
+		}
+		
 		return vowel;
 	}
 	
@@ -61,6 +174,67 @@ public class AleatoricName {
 		default:
 			break;
 		}
+		
+		if (vowel == 'A') {
+			random = (int) ((Math.random() * (100 - 0)) + 0);
+			
+			if (random >= 0 && random <= 5) {
+				vowel = 'Ä';
+			}
+			
+			if (random >= 10 && random <= 15) {
+				vowel = 'Á';
+			}
+		}
+		
+		if (vowel == 'E') {
+			random = (int) ((Math.random() * (100 - 0)) + 0);
+			
+			if (random >= 0 && random <= 5) {
+				vowel = 'Ë';
+			}
+			
+			if (random >= 10 && random <= 15) {
+				vowel = 'É';
+			}
+		}
+		
+		if (vowel == 'I') {
+			random = (int) ((Math.random() * (100 - 0)) + 0);
+			
+			if (random >= 0 && random <= 5) {
+				vowel = 'Ï';
+			}
+			
+			if (random >= 10 && random <= 15) {
+				vowel = 'Í';
+			}
+		}
+		
+		if (vowel == 'O') {
+			random = (int) ((Math.random() * (100 - 0)) + 0);
+			
+			if (random >= 0 && random <= 5) {
+				vowel = 'Ö';
+			}
+			
+			if (random >= 10 && random <= 15) {
+				vowel = 'Ó';
+			}
+		}
+		
+		if (vowel == 'U') {
+			random = (int) ((Math.random() * (100 - 0)) + 0);
+			
+			if (random >= 0 && random <= 5) {
+				vowel = 'Ü';
+			}
+			
+			if (random >= 10 && random <= 15) {
+				vowel = 'Ú';
+			}
+		}
+		
 		return vowel;
 	}
 
@@ -71,7 +245,6 @@ public class AleatoricName {
 		do {
 			random = (int) ((Math.random() * (max - min)) + min);
 		} while (random == 97 || random == 101 || random == 105 || random == 111 || random == 117);
-		
 		
 		return (char)random;
 	}
