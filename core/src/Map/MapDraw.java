@@ -38,6 +38,66 @@ public class MapDraw {
 			
 		}
 		
+		// Fill the borders with trees
+		
+		for (int i = 0; i < WIDTH; i++) {
+			
+			Tile tree = Tile.TREE_01;
+			
+			int random = (int) (Math.random() * 91 + 1);
+			if (random >= 1 && random <= 10) {
+				tree = Tile.TREE_01;
+			} else if (random >= 11 && random <= 20) {
+				tree = Tile.TREE_01;
+			} else if (random >= 21 && random <= 30) {
+				tree = Tile.TREE_01;
+			} else if (random >= 31 && random <= 40) {
+				tree = Tile.TREE_01;
+			} else if (random >= 41 && random <= 50) {
+				tree = Tile.TREE_01;
+			} else if (random >= 51 && random <= 60) {
+				tree = Tile.TREE_01;
+			} else if (random >= 61 && random <= 70) {
+				tree = Tile.TREE_01;
+			} else if (random >= 71 && random <= 80) {
+				tree = Tile.TREE_01;
+			} else if (random >= 81 && random <= 90) {
+				tree = Tile.TREE_01;
+			}
+			
+			tilemap[i][0] = tree;
+			tilemap[i][WIDTH-1] = tree;
+		}
+		
+		for (int i = 0; i < HEIGHT; i++) {
+
+			Tile tree = Tile.TREE_01;
+
+			int random = (int) (Math.random() * 91 + 1);
+			if (random >= 1 && random <= 10) {
+				tree = Tile.TREE_01;
+			} else if (random >= 11 && random <= 20) {
+				tree = Tile.TREE_01;
+			} else if (random >= 21 && random <= 30) {
+				tree = Tile.TREE_01;
+			} else if (random >= 31 && random <= 40) {
+				tree = Tile.TREE_01;
+			} else if (random >= 41 && random <= 50) {
+				tree = Tile.TREE_01;
+			} else if (random >= 51 && random <= 60) {
+				tree = Tile.TREE_01;
+			} else if (random >= 61 && random <= 70) {
+				tree = Tile.TREE_01;
+			} else if (random >= 71 && random <= 80) {
+				tree = Tile.TREE_01;
+			} else if (random >= 81 && random <= 90) {
+				tree = Tile.TREE_01;
+			}
+			
+				tilemap[0][i] = tree;
+				tilemap[ HEIGHT-1][i] = tree;
+		}
+		
 		// Generate TREE
 		double minPercent = (WIDTH * HEIGHT) * 0.05;
 		double maxPercent = (WIDTH * HEIGHT) * 0.40;
