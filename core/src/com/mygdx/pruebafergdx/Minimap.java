@@ -1,47 +1,58 @@
 package com.mygdx.pruebafergdx;
 
 
+import com.badlogic.gdx.math.Vector2;
+
 import Map.MapDraw;
 
 public class Minimap {
 	
+	// Esto necesita una refactorizacion muy bestia, para empezar usa 'x' e 'y' en los for cuando te refieras a coordenadas en los mapas
+	// Ademas no has seguido le mismo sistema que has usado para el mapa normal
+	// Ya que esto esta en una clase diferente, implementa el objeto Minimap con su witdh y height, y quizas algun metodo mas para referirte a las coordeanas del mapa normal
+	// o directamente haz metodos para escribir en el mapa con coordenadas del normal, lo que mas te guste
+	// Ademas MapDraw de por si tiene width y height
+
 	public static void seeMinimap(MapDraw map, int playerX, int playerY) {
-		
 		Tile[][] tilemap = map.tilemap;
 		
 		// First write the minimap
-		int realHeigth = tilemap.length;
-		int realWidth = tilemap[0].length;
-		
-		char[][] minimap = new char[realHeigth/10][(realWidth/10)*2];
+		int realWidth = tilemap.length;
+		int realHeigth = tilemap[0].length;
+
 		int miniHeigth = realHeigth/10;
 		int miniWidth = (realWidth/10)*2;
+		char[][] minimap = new char[miniWidth][miniHeigth];
 		
-		for (int i = 0; i < miniHeigth; i++) {
-			for (int j = 0; j < miniWidth; j++) {
+		
+		for (int i = 0; i < miniWidth; i++) {
+			for (int j = 0; j < miniHeigth; j++) {
 				minimap[i][j] = ' ';
 			}
 		}
 		
-		for (int i = 0; i < realHeigth; i++) {
-			for (int j = 0; j < realWidth; j++) {
+		for (int i = 0; i < realWidth; i++) {
+			for (int j = 0; j < realHeigth; j++) {
 				if (tilemap[i][j] == Tile.CAVE_01) {
-					// minimap[i/10][j/10] = 'C';
+					Vector2 coordsMinimap = getCoordinaetsOnMinimap(map, i, j);
+					minimap[(int)coordsMinimap.x][(int)coordsMinimap.y] = 'C';
 				}
 				if (tilemap[i][j] == Tile.MAN) {
-					// minimap[i/10][j/10] = 'M';
+					Vector2 coordsMinimap = getCoordinaetsOnMinimap(map, i, j);
+					minimap[(int)coordsMinimap.x][(int)coordsMinimap.y] = 'M';
 				}
 			}
 		}
 		
 		// Always write the player at finish
-		minimap[playerY/10][(playerX/10)*2] = 'P';
+		Vector2 playerCoordsMinimap = getCoordinaetsOnMinimap(map, playerX, playerY);
+		minimap[(int)playerCoordsMinimap.x][(int)playerCoordsMinimap.y] = 'P';
 		
 		// Then draw the minimap
-		for (int i = 0; i < miniHeigth; i++) {
-			if (i == 0) {
+		for (int j = 0; j < miniHeigth; j++) {
+			if (j == 0) {
 				System.out.print("|");
-				for (int j = 0; j < miniWidth; j++) {
+				for (int i = 0; i < miniWidth; i++) {
 					System.out.print("-");
 				}
 				
@@ -49,57 +60,57 @@ public class Minimap {
 			}
 			
 			System.out.print("|");
-			for (int j = 0; j < miniWidth; j++) {
+			for (int i = 0; i < miniWidth; i++) {
 				System.out.print(minimap[i][j]);				
 				
 			}
 			System.out.print("|");
 			
-			if (i == 3) {
+			if (j == 3) {
 				System.out.print("           N");
 			}
-			if (i == 4) {
+			if (j == 4) {
 				System.out.print("          S E");
 			}
-			if (i == 5) {
+			if (j == 5) {
 				System.out.print("           W");
 			}
-			if (i == 7) {
+			if (j == 7) {
 				System.out.print("   --------------------");
 			}
-			if (i == 8) {
+			if (j == 8) {
 				System.out.print("   | Michiland map    |");
 			}
-			if (i == 9) {
+			if (j == 9) {
 				System.out.print("   |                  |");
 			}
-			if (i == 10) {
+			if (j == 10) {
 				System.out.print("   | Legend           |");
 			}
-			if (i == 11) {
+			if (j == 11) {
 				System.out.print("   |                  |");
 			}
-			if (i == 12) {
+			if (j == 12) {
 				System.out.print("   | X: Cave          |");
 			}
-			if (i == 13) {
+			if (j == 13) {
 				System.out.print("   | J: Objetive      |");
 			}
-			if (i == 14) {
+			if (j == 14) {
 				System.out.print("   | P: You           |");
 			}
-			if (i == 15) {
+			if (j == 15) {
 				System.out.print("   |                  |");
 			}
-			if (i == 16) {
+			if (j == 16) {
 				System.out.print("   --------------------");
 			}
 			
 			System.out.println();
 			
-			if (i == miniHeigth-1) {
+			if (j == miniHeigth-1) {
 				System.out.print("|");
-				for (int j = 0; j < miniWidth; j++) {
+				for (int i = 0; i < miniWidth; i++) {
 					System.out.print("-");
 				}
 				System.out.println("|");
@@ -107,7 +118,16 @@ public class Minimap {
 		}
 		
 		minimap = null;
+	}
+
+	public static Vector2 getCoordinaetsOnMinimap(MapDraw map, int xMap, int yMap) {
+		int realHeigth = map.tilemap.length;
+
+		int miniHeigth = realHeigth/10;
 		
+		int x = (xMap/10)*2;
+		int y = (miniHeigth-1) - (yMap/10);
+		return new Vector2(x, y);
 	}
 	
 
