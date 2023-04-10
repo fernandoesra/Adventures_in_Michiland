@@ -26,14 +26,15 @@ public class Minimap {
 		for (int i = 0; i < realHeigth; i++) {
 			for (int j = 0; j < realWidth; j++) {
 				if (tilemap[i][j] == Tile.CAVE_01) {
-					minimap[i/10][j/10] = 'C';
+					// minimap[i/10][j/10] = 'C';
 				}
 				if (tilemap[i][j] == Tile.MAN) {
-					minimap[i/10][j/10] = 'M';
+					// minimap[i/10][j/10] = 'M';
 				}
 			}
 		}
 		
+		// Always write the player at finish
 		minimap[playerY/10][playerX/10] = 'P';
 		
 		// Then draw the minimap

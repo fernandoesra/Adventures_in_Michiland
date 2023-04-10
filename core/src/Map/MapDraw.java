@@ -42,7 +42,7 @@ public class MapDraw {
 		double minPercent = (WIDTH * HEIGHT) * 0.05;
 		double maxPercent = (WIDTH * HEIGHT) * 0.50;
 
-		double FILL = (Math.random() * maxPercent + minPercent);
+		double FILL = (Math.random() * 1 + 0);
 
 		for (int i = 0; i < FILL; i++) {
 			int fillWidth = (int) (Math.random() * WIDTH + 0);
