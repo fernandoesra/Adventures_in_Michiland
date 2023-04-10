@@ -6,7 +6,7 @@ public final class ServicioRandGen {
 	
 	private static Random randomNumberGen;
 
-	public void init() {
+	public static void init() {
 		if(randomNumberGen == null)randomNumberGen = new Random();
 	}
 
