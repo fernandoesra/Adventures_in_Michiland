@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.mygdx.servicios.ServicioRandGen;
 import com.mygdx.servicios.ServicioTexto;
 import com.mygdx.servicios.ServicioTextura;
 
@@ -33,11 +34,13 @@ public class Main extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
+		ServicioRandGen.init();
+		ServicioTexto.inicializaFuente();
+
 		spriteBatch = new SpriteBatch();
 		spriteSheet = new Texture("tile_michi_outside.png");
 		
 		ServicioTextura.iniciarTexturas(spriteSheet);
-		ServicioTexto.inicializaFuente();
 		
 		tilemap = new MapDraw(heigthTotal,widthTotal,spriteSheet);
 		
