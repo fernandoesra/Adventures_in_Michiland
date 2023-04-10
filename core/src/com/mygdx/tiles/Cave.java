@@ -9,7 +9,7 @@ public class Cave implements IPlayerAction{
 	double money;
 	
 	public Cave() {
-		AleatoricName newName = new AleatoricName();
+		AleatoricName newName = new AleatoricName(3,12);
 		money = (Math.random() * 101 + 1);
 		name = newName.toString();
 	}

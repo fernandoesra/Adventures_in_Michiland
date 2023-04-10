@@ -9,6 +9,11 @@ public class AleatoricName {
 		;
 	}
 	
+	public AleatoricName(int min, int max) {
+		this.name = this.generateAleatoricName(min, max);	
+		;
+	}
+	
 	public String generateAleatoricName() {
 		String newName = "";
 		
@@ -61,6 +66,69 @@ public class AleatoricName {
 		
 		for (int i = 0; i < nameChars.length; i++) {
 			newName += nameChars[i];
+		}
+		
+		return newName;
+	}
+	
+	public String generateAleatoricName(int min, int max) {
+		String newName = "";
+		int random = (int) ((Math.random() * (max - min)) + min);
+		int vowels = 0;
+		
+		char nameChars[] = new char[random];
+		
+		for (int i = 0; i < nameChars.length; i++) {
+			min = 0;
+			max = 100;
+			random = (int) ((Math.random() * (max - min)) + min);
+			
+			if (random >= 0 && random <= 85 && i == 0) {
+				nameChars[i] = this.generateConsonantMayus();
+			} else if (i == 0) {
+				nameChars[i] = this.generateVowelMayus();
+				vowels++;
+			}
+			
+			if (i > 0) {
+				
+				if (vowels >= 2) {
+					
+					random = (int) ((Math.random() * (max - min)) + min);
+					if (random >= 0 && random <= 85) {
+						nameChars[i] = this.generateConsonantMinus();
+						vowels--;
+					} else {
+						nameChars[i] = this.generateVowelMinus();
+						vowels++;
+					}
+					
+				} else {
+					
+					random = (int) ((Math.random() * (max - min)) + min);
+					if (random >= 0 && random <= 90) {
+						nameChars[i] = this.generateVowelMinus();
+						vowels++;
+					} else {
+						nameChars[i] = this.generateConsonantMinus();
+						vowels--;
+					}
+				}
+				
+			}
+
+		}
+		
+		for (int i = 0; i < nameChars.length; i++) {
+			newName += nameChars[i];
+			
+			if (i >= 6) {
+				random = (int) ((Math.random() * (100 - 1)) + 1);
+				if (random >= 1 && random <= 10) {
+					newName += " ";
+				}
+			}
+			
 		}
 		
 		return newName;
