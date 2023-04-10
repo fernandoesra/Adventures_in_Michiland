@@ -40,9 +40,9 @@ public class MapDraw {
 		
 		// Generate TREE
 		double minPercent = (WIDTH * HEIGHT) * 0.05;
-		double maxPercent = (WIDTH * HEIGHT) * 0.50;
+		double maxPercent = (WIDTH * HEIGHT) * 0.40;
 
-		double FILL = (Math.random() * 1 + 0);
+		double FILL = ((Math.random() * (maxPercent - minPercent)) + minPercent);
 
 		for (int i = 0; i < FILL; i++) {
 			int fillWidth = (int) (Math.random() * WIDTH + 0);
@@ -79,7 +79,7 @@ public class MapDraw {
 		// Generate HOUSE
 		minPercent = WIDTH/10;
 		maxPercent = minPercent*2;
-		FILL = (Math.random() * maxPercent + minPercent);
+		FILL = ((Math.random() * (maxPercent - minPercent)) + minPercent);
 		
 		for (int i = 0; i < FILL; i++) {
 			int fillWidth = (int) (Math.random() * WIDTH + 0);
@@ -117,7 +117,7 @@ public class MapDraw {
 		
 		minPercent = WIDTH/20;
 		maxPercent = minPercent*2;
-		FILL = (Math.random() * maxPercent + minPercent);
+		FILL = ((Math.random() * (maxPercent - minPercent)) + minPercent);
 		
 		for (int i = 0; i < FILL; i++) {
 			int fillWidth = (int) (Math.random() * WIDTH + 0);
@@ -135,7 +135,7 @@ public class MapDraw {
 		
 		minPercent = WIDTH/100;
 		maxPercent = minPercent*10;
-		FILL = (Math.random() * maxPercent + minPercent);
+		FILL = ((Math.random() * (maxPercent - minPercent)) + minPercent);
 		
 		for (int i = 0; i < FILL; i++) {
 			int fillWidth = (int) (Math.random() * WIDTH + 0);
@@ -167,7 +167,7 @@ public class MapDraw {
 		// Generate Mushrooms
 		minPercent = WIDTH/150;
 		maxPercent = minPercent*2;
-		FILL = (Math.random() * maxPercent + minPercent);
+		FILL = ((Math.random() * (maxPercent - minPercent)) + minPercent);
 		
 		for (int i = 0; i < FILL; i++) {
 			int fillWidth = (int) (Math.random() * WIDTH + 0);

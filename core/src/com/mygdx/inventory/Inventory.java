@@ -1,4 +1,4 @@
-package com.mygdx.pruebafergdx;
+package com.mygdx.inventory;
 
 import Map.MapDraw;
 
