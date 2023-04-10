@@ -1,4 +1,4 @@
-package test;
+package com.mygdx.test;
 
 import static org.junit.Assert.assertTrue;
 
